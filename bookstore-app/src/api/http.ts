@@ -8,7 +8,7 @@ const apiClient = axios.create({
 });
 
 type Book = {
-  id: string;
+  id?: string;
   book_title: string;
   name_of_author: string;
   price_of_book: string;

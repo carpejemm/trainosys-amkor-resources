@@ -16,6 +16,7 @@ interface GetBooksParams {
   onSuccess: (books: Book[]) => void;
   onError: (error: unknown) => void;
 }
+// @ts-ignore
 export default function App() {
   const [books, setBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -23,6 +24,7 @@ export default function App() {
   const getListOfBooks = () => {
     setIsLoading(true);
     getBooks(
+      // @ts-ignore
       (books: Book[]) => {
         setBooks(books);
         setIsLoading(false);
@@ -58,7 +60,7 @@ export default function App() {
 
   useEffect(() => {
     getListOfBooks();
-  }, []);
+  }, [books]);
 
   return (
     <View style={styles.container}>

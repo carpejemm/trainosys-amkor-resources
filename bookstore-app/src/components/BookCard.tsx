@@ -1,3 +1,4 @@
+// @ts-ignore
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, Platform, TouchableOpacity, Modal } from "react-native";
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
@@ -47,7 +48,7 @@ const BookCard = ({ id, authorName, bookTitle, bookPrice, bookCover, onDeleteIte
 
       {/* {Add modal for Edit Book} */}
       <Modal visible={modalVisible} animationType="slide" transparent={true} >
-        <EditBookScreen modalVisible={modalVisible} setModalVisible={setModalVisible} />
+        <EditBookScreen id={id} title={bookTitle} author={authorName} price={bookPrice} img={bookCover} modalVisible={modalVisible} setModalVisible={setModalVisible} />
       </Modal>
     </View>
   );
